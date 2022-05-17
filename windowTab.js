@@ -1,4 +1,4 @@
-export default class mdiWindowTabs {
+export default class windowTabs {
 
     /** @var {HTMLelement} Container of tabs */
     element;
