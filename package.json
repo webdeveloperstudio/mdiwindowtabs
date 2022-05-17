@@ -1,0 +1,30 @@
+{
+  "name": "mdiwindowtabs",
+  "version": "1.0.0",
+  "description": "Window tabs like MDI forms in Delphi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdeveloperstudio/mdiwindowtabs.git"
+  },
+  "keywords": [
+    "Window",
+    "Tabs",
+    "MDI",
+    "Delphi",
+    "Browser",
+    "tab"
+  ],
+  "author": "MerabC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webdeveloperstudio/mdiwindowtabs/issues"
+  },
+  "homepage": "https://github.com/webdeveloperstudio/mdiwindowtabs#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
