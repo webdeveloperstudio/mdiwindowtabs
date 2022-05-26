@@ -1,4 +1,4 @@
-import Events from "./events.js";
+import Events from "./events";
 import * as $ from 'jquery';
 
 interface TabJsonInterface {

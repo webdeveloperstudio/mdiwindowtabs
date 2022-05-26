@@ -1,4 +1,9 @@
 import $ from 'jquery';
+import { TabJsonInterface } from './mdiWindow';
+
+interface callbackInterface {
+    (event: TabJsonInterface): void;
+}
 
 export default class Events {
 
@@ -10,8 +15,12 @@ export default class Events {
     public init(pElement: JQuery<HTMLDivElement>) {
         this.element = pElement;
     }
-    public onClick(event: Event) {}
-    public onClose(event: Event) {}
-    public onOpen(event: Event) {}
+    public onClick(event: TabJsonInterface) {}
+    public onClose(event: TabJsonInterface) {}
+    public onOpen(event: TabJsonInterface, eventCallback: callbackInterface | null) {
+        if(eventCallback !== null && typeof eventCallback === 'function'){
+            eventCallback(event);
+        }
+    }
     public destroy() {}
 }

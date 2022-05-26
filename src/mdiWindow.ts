@@ -1,5 +1,6 @@
-import Events from "./events.js";
+import Events from "./events";
 import $ from 'jquery';
+import { errorHandler } from "./errorHandler";
 
 export interface TabJsonInterface {
     id: string;
@@ -14,7 +15,7 @@ export interface TabJsonInterface {
 export default class mdiWindow extends Events {
 
     /** @var {HTMLelement} Container of tabs */
-    element!: JQuery<HTMLDivElement>;
+    baseElement!: JQuery<HTMLDivElement>;
     /** @var {HTMLelement[]} tab elements */
     tabs: TabJsonInterface[] = [];
     /**
@@ -25,7 +26,7 @@ export default class mdiWindow extends Events {
         const el: JQuery<HTMLDivElement> = $(pElementSelector);
         super(el);
         super.init(el);
-        this.element = el;
+        this.baseElement = el;
         if (pTabJson.length > 0) {
             this.initialize(pTabJson);
         }
@@ -42,7 +43,7 @@ export default class mdiWindow extends Events {
         const vEl: TabJsonInterface = this.createTab(pTabJson);
         this.tabs.push(vEl);
         if (vEl.element) {
-            $(this.element).append(vEl.element);
+            $(this.baseElement).append(vEl.element);
         }
         return vEl;
     }
@@ -80,7 +81,7 @@ export default class mdiWindow extends Events {
     }
 
     /**
-     * @param {Array} pTabs 
+     * @param {Array} pTabs
      */
     public setTabs(pTabs: TabJsonInterface[]): void {
         const self = this;
@@ -117,7 +118,21 @@ export default class mdiWindow extends Events {
         return result[0];
     }
 
-    public openTabb(pTabId: string) { }
+    public openTab(pTabId: string) {
+        const vTab = this.tabs.filter(function (pTab: TabJsonInterface) {
+            return pTab.id === pTabId;
+        });
+        if (vTab.length > 0) {
+            this.onOpen(vTab[0]);
+            vTab[0].element?.addClass('active');
+        }else{
+            errorHandler.errorHandler({
+                error: 'Tab not found',
+                filename: 'mdiWindow.ts',
+                stackName: 'mdiWindow.openTab()'
+            });
+        }
+    }
 
     public closeTab(pTabId: string) { }
 };
