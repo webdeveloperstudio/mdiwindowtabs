@@ -13,11 +13,9 @@ export default class TabHelper {
      */
     constructor(pElementSelector: string, pTabJson: TabJsonInterface[] = []) {
         const el: JQuery<HTMLDivElement> = $(pElementSelector);
-        super(el);
-        super.init(el);
         this.baseElement = el;
         if (pTabJson.length > 0) {
-            this.initialize(pTabJson);
+            //this.initialize(pTabJson);
         }
     }
 }

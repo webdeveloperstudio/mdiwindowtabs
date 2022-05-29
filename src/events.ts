@@ -9,14 +9,14 @@ export default class Events {
 
     /** @var {HTMLelement} Container of tabs */
     element;
-    constructor(pElement: JQuery<HTMLDivElement>) {
+    constructor(pElement: JQuery<HTMLElement>) {
         this.element = pElement;
     }
-    public init(pElement: JQuery<HTMLDivElement>) {
+    public init(pElement: JQuery<HTMLElement>) {
         this.element = pElement;
     }
     public onClick(event: TabJsonInterface) {}
-    public onClose(event: TabJsonInterface) {}
+    public onClose(pTabElement: TabJsonInterface) {}
     public onOpen(event: TabJsonInterface, eventCallback: callbackInterface | null) {
         if(eventCallback !== null && typeof eventCallback === 'function'){
             eventCallback(event);

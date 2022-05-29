@@ -1,7 +1,13 @@
-[{
-        "id": "tab-1",
+[
+    {
+        "ref": "tab-3745",
         "className": "tab-1",
-        "attrs": [{
+        "ajax": {
+            "url": "https://api.napr.gov.ge/lr-test/redi?pid=101&bid=gl_wf_frames:12916&FRAME=REDI.VIEW.PAGE&MENU=VIEW&ITEM_ID=3735&APITOKEN=Skkn48-lHo8XEjyTyk7nRKa2S2E.",
+            "method": "GET"
+        },
+        "attrs": [
+            {
                 "data-tab-id": "tab-1"
             },
             {
@@ -13,9 +19,33 @@
         ]
     },
     {
-        "id": "tab-2",
-        "className": "tab-2",
-        "attrs": [{
+        "ref": "tab-3735",
+        "className": "tab-ITEM_ID_3735",
+        "ajax": {
+            "url": "https://api.napr.gov.ge/lr-test/redi?pid=101&bid=gl_wf_frames:12916&FRAME=REDI.VIEW.PAGE&MENU=VIEW&ITEM_ID=3735&APITOKEN=Skkn48-lHo8XEjyTyk7nRKa2S2E.",
+            "method": "GET"
+        },
+        "attrs": [
+            {
+                "data-tab-id": "tab-2"
+            },
+            {
+                "data-tab-title": "Tab 2"
+            },
+            {
+                "data-tab-class": "tab-2"
+            }
+        ]
+    },
+    {
+        "ref": "tab-3739",
+        "className": "tab-ITEM_ID_3739",
+        "ajax": {
+            "url": "https://api.napr.gov.ge/lr-test/redi?pid=101&bid=gl_wf_frames:12916&FRAME=REDI.VIEW.PAGE&MENU=VIEW&ITEM_ID=3739&APITOKEN=Skkn48-lHo8XEjyTyk7nRKa2S2E.",
+            "method": "GET"
+        },
+        "attrs": [
+            {
                 "data-tab-id": "tab-2"
             },
             {

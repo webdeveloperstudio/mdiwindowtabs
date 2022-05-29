@@ -1,33 +1,31 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.ts',
+    entry: {
+        app: './src/app.ts'
+    },
+    output: {
+        filename: '[name].js', //.[contenthash]
+        path: path.resolve(__dirname, 'dist'),
+        clean: true
+    },
     mode: 'development', //production
     module: {
         rules: [{
-                test: /\.tsx?$/,
+                test: /\.ts?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
             {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    // Creates `style` nodes from JS strings
-                    "style-loader",
-                    // Translates CSS into CommonJS
-                    "css-loader",
-                    // Compiles Sass to CSS
-                    "sass-loader",
-                ],
+                test: /\.css$/i,
+                loader: "css-loader",
+                options: {
+                    modules: true,
+                }
             }
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
-    output: {
-        filename: 'app.js',
-        clean: true,
-        path: path.resolve(__dirname, 'dist'),
-    },
+        extensions: ['.ts', '.js'],
+    }
 };
